@@ -6,6 +6,7 @@
 			"label": "C/C++: g++.exe build active file",
 			"command": "C:\\MinGW\\bin\\g++.exe",
 			"args": [
+				"-Wall",
 				"-c",
 				"-o",
 				"${workspaceFolder}\\build\\main.o",
@@ -25,6 +26,6 @@
 		}
 	]
 }
-//g++ -c -o "build\main.o" "src\main.cpp" -I "Dependencie\\freeglut\\include"
+//g++ -Wall -c -o "build\main.o" "src\main.cpp" -I "Dependencie\\freeglut\\include"
 //g++ -o "build\main.exe" "build\main.o" -L "Dependencie\freeglut\lib" -lfreeglut -lopengl32 -lmingw32 -lglu32 -Wl,--subsystem,windows
 
