@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "C/C++: g++.exe build active file",
+			"command": "C:\\MinGW\\bin\\g++.exe",
+			"args": [
+				"-c",
+				"-o",
+				"${workspaceFolder}\\build\\main.o",
+				"${workspaceFolder}\\src\\main.cpp",
+				"-I${workspaceFolder}\\Dependencie\\freeglut\\include"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
+//g++ -c -o "build\main.o" "src\main.cpp" -I "Dependencie\\freeglut\\include"
+//g++ -o "build\main.exe" "build\main.o" -L "Dependencie\freeglut\lib" -lfreeglut -lopengl32 -lmingw32 -lglu32 -Wl,--subsystem,windows
+
