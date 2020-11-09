@@ -28,4 +28,4 @@
 }
 //g++ -Wall -c -o "build\main.o" "src\main.cpp" -I "Dependencie\\freeglut\\include"
 //g++ -o "build\main.exe" "build\main.o" -L "Dependencie\freeglut\lib" -lfreeglut -lopengl32 -lmingw32 -lglu32 -Wl,--subsystem,windows
-
+//build\main.exe
