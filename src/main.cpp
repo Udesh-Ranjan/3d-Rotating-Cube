@@ -30,8 +30,12 @@ GLfloat color[8][3] = {
     {1.0,1.0,1.0},
     {0.0,1.0,1.0},
 };
-float rotateX=0,rotateY=0;
-float speed=2;
+double rotateX=0,rotateY=0;
+double speed=2;
+const double GRAVITY=0.96;
+double speedX=0;
+double speedY=0;
+double increment=1.5;
 /////Main///////
 int main(int argc,char **argv){
     glutInit(&argc,argv);
@@ -52,6 +56,18 @@ void display(){
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
     glTranslatef(0,0,-8.0);
+    speedX*=GRAVITY;
+    speedY*=GRAVITY;
+    if(speedX>15)
+    speedX=15;
+    if(speedX<-15)
+    speedX=-15;
+    if(speedY>15)
+    speedY=15;
+    if(speedY<-15)
+    speedY=-15;
+    rotateX=rotateX+speedX;
+    rotateY=rotateY+speedY;
     glRotatef(rotateX,0,1,0);
     glRotatef(rotateY,1,0,0);
     
@@ -94,16 +110,20 @@ void reshape(int w,int h){
 ///////Special////////////
 void specialKey(int key,int a,int b){
     if(key==GLUT_KEY_UP){
-        rotateY-=speed;
+        // rotateY-=speed;
+        speedY-=increment;
     }
     if(key==GLUT_KEY_DOWN){
-        rotateY+=speed;
+        // rotateY+=speed;
+        speedY+=increment;
     }
     if(key==GLUT_KEY_LEFT){
-        rotateX-=speed;
+        // rotateX-=speed;
+        speedX-=increment;
     }
     if(key==GLUT_KEY_RIGHT){
-        rotateX+=speed;
+        // rotateX+=speed;
+        speedX+=increment;
     }
 }
 ///////Timer///////
