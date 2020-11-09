@@ -2,7 +2,10 @@
 #include<stdlib.h>
 #include<GL/freeglut.h>
 using namespace std;
-
+/*
+    Dev Parzival
+    Code for rotating a Cube
+*/
 void display();
 void init();
 void timer(int);
@@ -104,7 +107,7 @@ void reshape(int w,int h){
     glViewport(0,0,w,h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(40,w/h,2.0,30);
+    gluPerspective(40,1,2.0,30);
     glMatrixMode(GL_MODELVIEW);
 }
 ///////Special////////////
